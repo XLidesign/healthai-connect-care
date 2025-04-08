@@ -12,6 +12,8 @@ import BillsManagement from "./pages/BillsManagement";
 import MedicineDelivery from "./pages/MedicineDelivery";
 import QRScanner from "./pages/QRScanner";
 import HealthProfile from "./pages/HealthProfile";
+import Metrics from "./pages/Metrics";
+import Monetization from "./pages/Monetization";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,6 +38,8 @@ const App = () => (
             <Route path="doctor-search" element={<DoctorSearch />} />
             <Route path="bills-management" element={<BillsManagement />} />
             <Route path="medicine-delivery" element={<MedicineDelivery />} />
+            <Route path="metrics" element={<Metrics />} />
+            <Route path="monetization" element={<Monetization />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

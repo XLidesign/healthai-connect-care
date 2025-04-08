@@ -15,7 +15,9 @@ import {
   Bell,
   Settings,
   HelpCircle,
-  Search
+  Search,
+  ChartBar,
+  BadgeDollarSign
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -42,6 +44,8 @@ const Navigation = () => {
     { path: "/doctor-search", label: "Find Doctor", icon: <UserSearch className="mr-2 h-4 w-4" /> },
     { path: "/bills-management", label: "Bills", icon: <Receipt className="mr-2 h-4 w-4" /> },
     { path: "/medicine-delivery", label: "Medicine", icon: <ShoppingBag className="mr-2 h-4 w-4" /> },
+    { path: "/metrics", label: "Metrics", icon: <ChartBar className="mr-2 h-4 w-4" /> },
+    { path: "/monetization", label: "Pricing", icon: <BadgeDollarSign className="mr-2 h-4 w-4" /> },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
