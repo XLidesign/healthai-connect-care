@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,6 +6,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
+import DeviceConnect from "./pages/DeviceConnect";
+import HealthDashboard from "./pages/HealthDashboard";
+import DoctorSearch from "./pages/DoctorSearch";
+import BillsManagement from "./pages/BillsManagement";
+import MedicineDelivery from "./pages/MedicineDelivery";
+import QRScanner from "./pages/QRScanner";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +23,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Index />} />
+            <Route path="qr-scanner" element={<QRScanner />} />
+            <Route path="connect-device" element={<DeviceConnect />} />
+            <Route path="health-dashboard" element={<HealthDashboard />} />
+            <Route path="doctor-search" element={<DoctorSearch />} />
+            <Route path="bills-management" element={<BillsManagement />} />
+            <Route path="medicine-delivery" element={<MedicineDelivery />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
