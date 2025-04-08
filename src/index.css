@@ -43,6 +43,12 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Google-inspired colors */
+    --google-blue: 217 89% 61%;
+    --google-red: 4 90% 58%;
+    --google-yellow: 45 97% 50%;
+    --google-green: 142 69% 58%;
   }
 
   .dark {
@@ -92,6 +98,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Google Sans', 'Roboto', system-ui, sans-serif;
   }
 }
 
@@ -100,9 +107,54 @@
 }
 
 .healthai-card {
-  @apply border rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300;
+  @apply border rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300;
 }
 
 .healthai-section {
-  @apply p-6 rounded-xl border bg-gradient-to-br from-white to-blue-50/50;
+  @apply p-6 rounded-xl border bg-white shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+/* Google-inspired design elements */
+.google-card {
+  @apply rounded-xl p-6 border shadow-sm hover:shadow-md transition-all duration-300 bg-white;
+}
+
+.google-button {
+  @apply rounded-full px-6 py-2 font-medium transition-all duration-200;
+}
+
+.google-primary-button {
+  @apply google-button bg-primary text-white hover:shadow-md hover:bg-primary/90;
+}
+
+.google-secondary-button {
+  @apply google-button bg-white border border-gray-200 hover:bg-gray-50 text-gray-700;
+}
+
+.google-section-title {
+  @apply text-xl font-medium text-gray-800 mb-4;
+}
+
+.google-gradient-blue-purple {
+  @apply bg-gradient-to-r from-[#4285F4] to-[#9959D9];
+}
+
+.google-gradient-purple-teal {
+  @apply bg-gradient-to-r from-[#9959D9] to-[#46C5DD];
+}
+
+.google-gradient-teal-blue {
+  @apply bg-gradient-to-r from-[#46C5DD] to-[#4285F4];
+}
+
+.google-glass-card {
+  @apply backdrop-blur-sm bg-white/80 border border-gray-100 shadow-sm rounded-xl;
+}
+
+.page-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+}
+
+.section-container {
+  @apply max-w-5xl mx-auto;
 }
