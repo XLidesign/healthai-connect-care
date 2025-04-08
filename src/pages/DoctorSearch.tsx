@@ -11,7 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const DoctorSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [specialty, setSpecialty] = useState("");
+  const [specialty, setSpecialty] = useState("all");
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
   const { toast } = useToast();
 
@@ -20,7 +20,7 @@ const DoctorSearch = () => {
   const filteredDoctors = doctors.filter(doctor => {
     const matchesSearch = doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          doctor.hospital.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesSpecialty = specialty === "" || doctor.specialty === specialty;
+    const matchesSpecialty = specialty === "all" || doctor.specialty === specialty;
     
     return matchesSearch && matchesSpecialty;
   });
@@ -70,7 +70,7 @@ const DoctorSearch = () => {
                   <SelectValue placeholder="Specialty" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Specialties</SelectItem>
+                  <SelectItem value="all">All Specialties</SelectItem>
                   {specialties.map(spec => (
                     <SelectItem key={spec} value={spec}>{spec}</SelectItem>
                   ))}
